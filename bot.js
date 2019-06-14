@@ -36,13 +36,13 @@ client.on('message', (message) => {
 client.on('message', async (message) => {
   if (message.author.id == config.bot_id) return;
   if (message.channel.name == 'ai') {
-	    clbot.write(message.content, (response) => {
-	      message.channel.startTyping();
-	      setTimeout(() => {
-	        message.channel.send(response.output).catch(console.error);
-	        message.channel.stopTyping();
-	      }, Math.random() * (1 - 3) + 1 * 1000);
-	    });
+    clbot.write(message.content, (response) => {
+      message.channel.startTyping();
+      setTimeout(() => {
+        message.channel.send(response.output).catch(console.error);
+        message.channel.stopTyping();
+      }, Math.random() * (1 - 3) + 1 * 1000);
+    });
   }
 });
 
